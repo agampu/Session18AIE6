@@ -5,13 +5,14 @@
 
 ## <h1 align="center" id="heading">AI Makerspace: MCP Event</h1>
 
-## Added Calculator Tool
+## <span style="color:green"> Added Calculator Tool
 
-We added a simple calculator tool that performs basic arithmetic operations (+, -, *, /, **, parentheses).
+<span style="color:green">We added a simple calculator tool that performs basic arithmetic operations (+, -, *, /, **, parentheses).
 
-### Test Results
+### <span style="color:green"> Test Results
 ```
 uv run test_server.py
+
 [05/29/25 17:45:57] INFO     Processing request of type ListToolsRequest                                       server.py:556
 Available tools: web_search, roll_dice, calculate
                     INFO     Processing request of type CallToolRequest                                        server.py:556
