@@ -21,13 +21,25 @@ def roll_dice(notation: str, num_rolls: int = 1) -> str:
     roller = DiceRoller(notation, num_rolls)
     return str(roller)
 
-"""
-Add your own tool here, and then use it through Cursor!
-"""
 @mcp.tool()
-def YOUR_TOOL_NAME(query: str) -> str:
-    """YOUR_TOOL_DESCRIPTION"""
-    return "YOUR_TOOL_RESPONSE"
+def calculate(expression: str) -> str:
+    """Perform basic arithmetic calculations. Supports +, -, *, /, ** (power), and parentheses."""
+    try:
+        # Only allow safe mathematical operations
+        allowed_chars = set('0123456789+-*/().** ')
+        if not all(c in allowed_chars for c in expression):
+            return "Error: Only numbers and basic operators (+, -, *, /, **, parentheses) are allowed."
+        
+        # Evaluate the expression safely
+        result = eval(expression)
+        return f"{expression} = {result}"
+    
+    except ZeroDivisionError:
+        return "Error: Division by zero is not allowed."
+    except SyntaxError:
+        return "Error: Invalid mathematical expression."
+    except Exception as e:
+        return f"Error: {str(e)}"
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
