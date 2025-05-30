@@ -5,6 +5,24 @@
 
 ## <h1 align="center" id="heading">AI Makerspace: MCP Event</h1>
 
+## Added Calculator Tool
+
+We added a simple calculator tool that performs basic arithmetic operations (+, -, *, /, **, parentheses).
+
+### Test Results
+```
+uv run test_server.py
+[05/29/25 17:45:57] INFO     Processing request of type ListToolsRequest                                       server.py:556
+Available tools: web_search, roll_dice, calculate
+                    INFO     Processing request of type CallToolRequest                                        server.py:556
+Web search result: [{"url": "https://www.worldatlas.com/articles/what-is-the-capital-of-france.html", "content": "Paris is the capital city of France. Contrary to popular belief, the name of the city did not come from the Paris in Greek myths. Located in the north of Central France, the city is relatively flat with th...
+[05/29/25 17:45:58] INFO     Processing request of type CallToolRequest                                        server.py:556
+Calculator result: [TextContent(type='text', text='15 * 8 + 25 = 145', annotations=None)]
+                    INFO     Processing request of type CallToolRequest                                        server.py:556
+Dice result: [TextContent(type='text', text='ROLLS: 5, 4, 2 -> RETURNS: 11', annotations=None)]
+```
+
+
 This project is a demonstration of the MCP (Model Context Protocol) server, which utilizes the Tavily API for web search capabilities. The server is designed to run in a standard input/output (stdio) transport mode.
 
 ## Project Overview
@@ -85,3 +103,5 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+
